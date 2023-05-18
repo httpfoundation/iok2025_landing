@@ -1,6 +1,6 @@
 import { useQuerySubscription } from "react-datocms";
 
-const token = "1a6a606f0a56bde210db59c9fbf601"
+export const token = "c857b0fa0e3cf583f1d8872ba86d9d"
 
 export const useStaticElement = (staticTextField, isStructuredText = true) => {
     const valueProperty = isStructuredText ? "{value }" : "";
