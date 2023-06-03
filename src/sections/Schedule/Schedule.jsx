@@ -18,7 +18,7 @@ const PreseterImages = (props) => {
                 className="image"
                 style={{
                     backgroundImage:
-                        "url('" + presenter.image.url + "')",
+                    presenter.image?.url ? "url('" + presenter.image.url + "')" : undefined,
                 }}
             ></div>
         ))}
@@ -41,7 +41,7 @@ const ScheduleItem = (props) => {
                         key={presenter.id}
                         className="image"
                         style={{
-                            backgroundImage: "url('" + presenter.image.url + "')",
+                            backgroundImage: presenter.image?.url ? "url('" + presenter.image.url + "')" : undefined,
                             transform: `translateY(${index * -7}px)`,
                         }}
                     ></div>

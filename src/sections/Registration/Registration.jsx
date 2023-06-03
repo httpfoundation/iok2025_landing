@@ -30,7 +30,6 @@ const Registration = (props) => {
 	const [registrationInfoOnsiteOnly] = useStaticElement("registrationInfoOnsiteOnly")
 	const [registrationInfoHybrid] = useStaticElement("registrationInfoHybrid")
 	const [registrationInfoClosed] = useStaticElement("registrationInfoClosed")
-	console.log({registrationOnline}, {registrationOnsite}, {registrationInfoOnlineOnly: registrationInfoOnlineOnly}, {registrationInfoOnsiteOnly: registrationInfoOnsiteOnly}, {registrationInfoHibryd: registrationInfoHybrid})
 	const registrationText2 = registrationOnline && registrationOnsite ? registrationInfoHybrid : registrationOnline ? registrationInfoOnlineOnly : registrationInfoClosed
 
 	const [name, setName] = useState('')
