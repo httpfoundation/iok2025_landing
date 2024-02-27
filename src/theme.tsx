@@ -15,6 +15,7 @@ const iokBlue = "#003b52"
 const iokBlue1 = "#14475C"
 const iokDarkBlue = "#002939"
 const iokLightBlue = "#d6f4f5"
+const iokMagenta = "#d8a1d8"
 
 const iokAmber = "#f18c4e"
 const iokLightAmber = "#fde9d1"
@@ -65,7 +66,7 @@ let theme = createTheme({
 	palette: {
 		mode: 'light',
 		primary: {
-		  main: iokLightblue,
+		  main: iokMagenta,
 		  dark: colorPrimaryDark,
 		  light: colorPrimaryLight,
 		  contrastText: colorPrimaryText,

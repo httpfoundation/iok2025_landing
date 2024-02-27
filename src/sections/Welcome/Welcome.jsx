@@ -5,7 +5,7 @@ import Ticket from "../../icons/Ticket";
 import Location from "../../icons/Location";
 import Button from "../../components/Button/Button";
 import Section from "../../components/Section/Section";
-import WelcomeImage from "../../assets/img/welcome-img.png";
+import WelcomeImage from "../../assets/img/welcome-img-lila.png";
 import WelcomeImageMobile from "../../assets/img/welcome-img-mobile.png";
 import "./Welcome.scss";
 import Fade from "react-reveal/Fade"
