@@ -28,7 +28,7 @@ const Sponsors = () => {
 
 		{sponsorCategories.map((category, idx) => (
 			<Fragment key={idx}>
-				<h3>{category?.name}</h3>
+				<h3 style={{ margin: idx === 0 ? undefined : '60px 0 40px 0' }}>{category?.name}</h3>
 				<div className="sponsor-grid main-sponsors">
 					{category?.sponsor?.map(sponsor => <Sponsor image={sponsor.logo.url} link={sponsor.url} />)}
 				</div>
