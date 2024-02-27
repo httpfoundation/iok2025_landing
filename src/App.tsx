@@ -13,7 +13,7 @@ function App() {
         <ThemeProvider theme={theme}>
             <BrowserRouter>
                 <AppContext.Provider
-                    value={{apiKey: "1a6a606f0a56bde210db59c9fbf601"}}
+                    value={{apiKey: "15992aedd137cb7ad552550d3b9deb"}}
                 >
                     <Routes>
                         <Route path="/szabaduloszoba" element={<EscapeRoomBookingPage/>}/>

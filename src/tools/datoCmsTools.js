@@ -144,3 +144,25 @@ export const useStatQuery = (statType) => {
 
     return [onsite, online, all]
 } 
+
+export const useSponsorCategories = () => {
+    const query = `{    allSponsorCategories {
+        id
+        name
+        sponsor {
+          name
+          logo {
+            url
+          }
+          url
+        }
+        position
+      }}`;
+
+    const { data } = useQuerySubscription({
+        query,
+        token
+    });
+    
+    return data ? data.allSponsorCategories : []
+}
