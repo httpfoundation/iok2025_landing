@@ -14,7 +14,6 @@ import Alert from "react-bootstrap/Alert"
 import Spinner from "react-bootstrap/Spinner"
 import { useStaticElement, useAllElements } from '../../tools/datoCmsTools'
 
-
 const Registration = (props) => {
 
 	const context = useContext(AppContext)
@@ -146,7 +145,19 @@ const Registration = (props) => {
 					<div className="" style={{padding: '0.8rem', border: '1px solid #ced4da', borderRadius: '0.25rem'}}>
 						<StructuredText data={vipCode ? registrationFormatVipText : registrationFormatText} />
 						<div className="form-check">
-							<input className="form-check-input" type="checkbox" name="online" id="onsite-field" checked={onsite} onChange={e => setOnsite(e.target.checked)}/>
+							<input 
+								className="form-check-input"
+								type="checkbox"
+								name="online"
+								id="onsite-field"
+								checked={onsite}
+								onChange={e => {
+									setOnsite(e.target.checked);
+									if(!e.target.checked) {
+										setStage('');
+									}
+								}}
+							/>
 							<label className="form-check-label" htmlFor="onsite-field">
 								{registrationFormatCheckboxText}
 							</label>
@@ -156,7 +167,7 @@ const Registration = (props) => {
 								<label className="form-label  mt-4">Melyik délutáni szekción szeretnél részt venni?*</label>
 								<select className="form-select" required={onsite} value={stage} onChange={e => setStage(e.target.value)}>
 									<option value={""} hidden></option>
-									{ allStages?.slice(1).slice(0,-1).map((stage, index) => <option key={index} value={stage.id}>{stage.name}</option>) }
+									{ allStages?.slice(1).map((stage, index) => <option key={index} value={stage.id}>{stage.name}</option>) }
 								</select>
 							</>
 						}
@@ -173,7 +184,7 @@ const Registration = (props) => {
 				<div className="form-check mb-4 mt-4">
 					<input className="form-check-input" type="checkbox" id="toc-field" required />
 					<label className="form-check-label" htmlFor="toc-field">
-						Elolvastam és elfogadom az <a href="https://www.datocms-assets.com/94181/1676993398-adatkezelesi_tajekoztato_iok2024.pdf" target="_blank" className="link" rel="noreferrer">Adatkezelési Tájékoztató</a>ban foglaltakat.*
+						Elolvastam és elfogadom az <a href="https://www.datocms-assets.com/119761/1709024657-adatkezelesi_tajekoztato_iok2024.pdf" target="_blank" className="link" rel="noreferrer">Adatkezelési Tájékoztató</a>ban foglaltakat.*
 					</label>
 				</div>			
 				<div className="my-4"/>

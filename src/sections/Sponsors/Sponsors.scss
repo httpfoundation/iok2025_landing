@@ -26,6 +26,8 @@
 			
 			.sponsor {
 				height: 90px;
+				display: flex;
+				justify-content: center;
 			}
 			@include mobile {
 				grid-template-columns: 1fr;
