@@ -95,5 +95,10 @@
 			margin-top: 30px;
 		}
 	}
+	h2 {
+		.highlight {
+			color: $bg-primary;
+		}
+	}
 	padding-bottom: 100px;
 }

@@ -2,6 +2,10 @@
 #regisztracio {
 	h2.title {
 		color: $iok-light;
+		.highlight {
+			color: $bg-primary;
+		}
+	
 	}
 	.text {
 		color: $iok-light;

@@ -31,7 +31,7 @@ const HamburgerMenu = (props) => {
 			<div className='hamburger-menu-items'>
 				{ items.map((item, key) => <a key={key} href={item.href} onClick={props.onClose}>{item.name}</a>)}
 			</div>
-			<Button href="#regisztracio" onClick={props.onClose}><Ticket />Regisztráció</Button>
+			<Button href="#regisztracio" bold onClick={props.onClose}><Ticket />Regisztráció</Button>
 		</div>
 		</>
 	)

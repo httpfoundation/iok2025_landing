@@ -5,23 +5,15 @@ $dark-more: #202333;
 $grey: #4F4F4F;
 $lightgrey: #BDBDBD;
 $bg-light: #fff;
-$bg-primary: #a47aa4; // header alatti sáv
+$bg-primary: #8b7ca6; // header alatti sáv
 $bg-secondary: #363c56; // header háttér
 $h1-color: #fadd99;
-$iok-lightblue: #47BED0;
 $iok-light: #bde7ff;
+$iok-lightblue: adjust-color($dark, $lightness: 25%);
 $iok-lightgrey: #bde7ff; // info section background
 
 /* 
-$bg-primary: #003b52;
-1c3664
-$primary: #47CCD4;
-$light: #fff;
-$dark: #000;
-$grey: #4F4F4F;
-$lightgrey: #BDBDBD;
-$bg-light: #fff;
-$bg-primary: #D6F4F5;
+
  */
 $mobile-breakpoint: 762px;
 
