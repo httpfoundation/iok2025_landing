@@ -21,16 +21,23 @@
 		&.main-sponsors, &.partner-sponsors {
 			grid-template-columns: repeat(2, 1fr);
 			grid-template-rows: 1fr;
-			justify-items: center;
 			max-width: 700px;
+			align-items: center;
+			width: 100%;
+			text-align: center;
 			
 			.sponsor {
 				height: 90px;
 				display: flex;
 				justify-content: center;
 			}
+			.sponsor.w-full {
+				grid-column-start: 1;
+				grid-column-end: 3;
+			}
 			@include mobile {
-				grid-template-columns: 1fr;
+				display: flex;
+				flex-direction: column;
 				column-gap: 20px;
 				row-gap: 50px;
 				.sponsor {
