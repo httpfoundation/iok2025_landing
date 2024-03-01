@@ -19,9 +19,9 @@
 		}
 
 		&.main-sponsors, &.partner-sponsors {
-			grid-template-columns: repeat(2, 1fr);
+			grid-template-columns: repeat(3, 1fr);
 			grid-template-rows: 1fr;
-			max-width: 700px;
+			max-width: 1000px;
 			align-items: center;
 			width: 100%;
 			text-align: center;
@@ -33,7 +33,14 @@
 			}
 			.sponsor.w-full {
 				grid-column-start: 1;
-				grid-column-end: 3;
+				grid-column-end: 4;
+			}
+			@media screen and (max-width: 1200px) {
+				grid-template-columns: repeat(2, 1fr);
+				max-width: 700px;
+				.sponsor.w-full {
+					grid-column-end: 3;
+				}
 			}
 			@include mobile {
 				display: flex;
