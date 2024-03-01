@@ -8,9 +8,9 @@ import { Fragment } from "react"
 
 const Sponsor = (props) => {
 	return (
-		<div className="sponsor">
+		<div className={`sponsor ${props.fullWidth ? 'w-full' : ''}`}>
 			<a href={props.link} target="_blank" rel="noopener noreferrer"  >
-					<img src={props.image} alt={props.name} {...props}/>
+				<img src={props.image} alt={props.name} {...props}/>
 			</a>
 		</div>
 	)
@@ -28,11 +28,17 @@ const Sponsors = () => {
 
 		{sponsorCategories.map((category, idx) => (
 			<Fragment key={idx}>
-				<h3>{category?.name}</h3>
+				<h3 style={{ margin: idx === 0 ? undefined : '80px 0 40px 0' }}>{category?.name}</h3>
 				<div className="sponsor-grid main-sponsors">
-					{category?.sponsor?.map(sponsor => <Sponsor image={sponsor.logo.url} link={sponsor.url} />)}
+					{category?.sponsor?.map((sponsor, sponsorIdx) => (
+						<Sponsor
+							image={sponsor.logo.url}
+							link={sponsor.url}
+							fullWidth={category?.sponsor?.length % 2 !== 0 && sponsorIdx === category?.sponsor?.length - 1}
+						/>
+					))}
 				</div>
-			</Fragment>	
+			</Fragment>
 		))}
 	</Section>
 }

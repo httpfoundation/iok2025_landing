@@ -34,8 +34,8 @@
 		font-size: 0.90rem;
 	}
 	.form-check-input:checked {
-		background-color: $primary;
-		border-color: adjust-color($color: $primary, $lightness: -15%);
+		background-color: $bg-primary;
+		border-color: $bg-primary;
 	}
 	.form-check-input:focus {
 		box-shadow: none;

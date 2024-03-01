@@ -88,9 +88,10 @@ const Welcome = () => {
                     </Fade>
                     <Fade left delay={350}>
                         <img
-                            src={WelcomeImageMobile}
+                            src={WelcomeImage}
                             alt="IOK 2024"
                             className="welcome-image-mobile"
+                            style={{ marginTop: '-80px' }}
                         />
                     </Fade>
                     <Fade top delay={400}>
