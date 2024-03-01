@@ -18,7 +18,7 @@ const Registration = (props) => {
 
 	const context = useContext(AppContext)
 	const [allStages] = useAllElements("stages")
-	const [registrationText] = useStaticElement("registration") 
+	//const [registrationText] = useStaticElement("registration") 
 	const [registrationFormatText] = useStaticElement("registrationFormat") 
 	const [registrationFormatVipText] = useStaticElement("registrationFormatVip")
 	const [registrationSuccessText] = useStaticElement("registrationSuccess") 
@@ -26,7 +26,7 @@ const Registration = (props) => {
 	const [registrationOnline] = useStaticElement("registrationOnline", false) 	
 	const [registrationOnsite] = useStaticElement("registrationOnsite", false)
 	const [registrationInfoOnlineOnly] = useStaticElement("registrationInfoOnlineOnly")
-	const [registrationInfoOnsiteOnly] = useStaticElement("registrationInfoOnsiteOnly")
+	//const [registrationInfoOnsiteOnly] = useStaticElement("registrationInfoOnsiteOnly")
 	const [registrationInfoHybrid] = useStaticElement("registrationInfoHybrid")
 	const [registrationInfoClosed] = useStaticElement("registrationInfoClosed")
 	const registrationText2 = registrationOnline && registrationOnsite ? registrationInfoHybrid : registrationOnline ? registrationInfoOnlineOnly : registrationInfoClosed
@@ -39,6 +39,8 @@ const Registration = (props) => {
 	const [newsletter, setNewsletter] = useState(false)
 	const [onsite, setOnsite] = useState(false)
 	const [stage, setStage] = useState("")
+	const [privacy, setPrivacy] = useState(false)
+	
 
 	const [loading, setLoading] = useState(false)
 	const [success, setSuccess] = useState(false)
@@ -84,6 +86,7 @@ const Registration = (props) => {
 			setNewsletter(false)
 			setOnsite(false)
 			setStage(null)
+			setPrivacy(false)
 			if (vipCode) window.history.replaceState({}, document.title, window.location.pathname + window.location.hash)
 		} catch (error) {
 			console.log(error)
@@ -182,7 +185,7 @@ const Registration = (props) => {
 					</label>
 				</div>
 				<div className="form-check mb-4 mt-4">
-					<input className="form-check-input" type="checkbox" id="toc-field" required />
+					<input className="form-check-input" type="checkbox" id="toc-field" checked={privacy} required onChange={e => setPrivacy(e.target.checked)}/>
 					<label className="form-check-label" htmlFor="toc-field">
 						Elolvastam és elfogadom az <a href="https://www.datocms-assets.com/119761/1709024657-adatkezelesi_tajekoztato_iok2024.pdf" target="_blank" className="link" rel="noreferrer">Adatkezelési Tájékoztató</a>ban foglaltakat.*
 					</label>
@@ -201,7 +204,7 @@ const Registration = (props) => {
 					A megadott e-mail címmel már történt regisztráció.
 				</Alert>
 
-				<Button submit>
+				<Button bold submit>
 					{ loading &&
 					<div style={{ position: 'absolute', top: '5px', left: '50%', transform: 'translateX(-50%)' }}>
 						<Spinner

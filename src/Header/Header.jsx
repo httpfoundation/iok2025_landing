@@ -1,6 +1,6 @@
 import './Header.scss'
-import BrandImg from '../assets/img/http-iok-logo.png' 
-import BrandImgSmall from '../assets/img/http-iok-logo-small.png' 
+import BrandImg from '../assets/img/http-iok-logo-2024-green.png' 
+//import BrandImgSmall from '../assets/img/http-iok-logo-small.png' 
 import Button from '../components/Button/Button'
 import Ticket from '../icons/Ticket'
 import useScrollPosition from '@react-hook/window-scroll'
@@ -45,7 +45,7 @@ const Header = () => {
 
 	const [menuOpen, setMenuOpen] = useState(false)
 
-	return <header className={`${scrollY < limit ? 'transparent' : ''}`}>
+	return <header className={`${scrollY < limit ? 'transparent' : ''} header`}>
 		<div className="container">
 			<Fade top delay={900}>
 				{/* <img src={BrandImgSmall} alt="HTTP Alapítvány" className="brand-image brand-image-small" /> */}

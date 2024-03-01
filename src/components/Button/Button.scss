@@ -1,7 +1,10 @@
 @import '../../theme.scss';
 
 .button {
-	background-color: $primary;
+	background-color: $iok-lightgreen;
+	&.header {
+		background-color: $iok-lightgreen;
+	}
 	color: $dark;
 	border: 0;
 	height: 45px;

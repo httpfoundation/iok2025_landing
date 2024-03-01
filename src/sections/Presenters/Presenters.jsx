@@ -91,7 +91,7 @@ const Presenters = (props) => {
             
 			
 			{(allPresenters) && <HighlightedPresenters presenters={allPresenters.filter(s => s.highlighted)} />}
-			<Button onClick={() => setShowAll(!showAll)}><Arrow rotation={showAll ? 180 : 0} /> További előadóink </Button>
+			<Button bold onClick={() => setShowAll(!showAll)}><Arrow rotation={showAll ? 180 : 0 } /> További előadóink </Button>
 			{(allPresenters && showAll) && <AllPresenters presenters={allPresenters.filter(s => !s.highlighted)} />}
 			
         </Section>
