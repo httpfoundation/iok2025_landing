@@ -5,6 +5,7 @@ import './Sponsors.scss'
 import { useSponsorCategories, useStaticElement } from '../../tools/datoCmsTools'
 import { StructuredText  } from "react-datocms"
 import { Fragment } from "react"
+import { useMediaQuery } from "@mui/material"
 
 const Sponsor = (props) => {
 	return (
@@ -17,7 +18,9 @@ const Sponsor = (props) => {
 }
 
 const Sponsors = () => {
-	const [sponsorText] = useStaticElement("sponsor") 
+	const [sponsorText] = useStaticElement("sponsor")
+	const underLg = useMediaQuery('@media screen and (max-width: 1200px)')
+	console.log(underLg)
 	const sponsorCategories = useSponsorCategories()
 
 	return <Section container placeholder id="tamogatok">
@@ -34,7 +37,7 @@ const Sponsors = () => {
 						<Sponsor
 							image={sponsor.logo.url}
 							link={sponsor.url}
-							fullWidth={category?.sponsor?.length % 2 !== 0 && sponsorIdx === category?.sponsor?.length - 1}
+							fullWidth={category?.sponsor?.length % (underLg ? 2 : 3) !== 0 && sponsorIdx === category?.sponsor?.length - 1}
 						/>
 					))}
 				</div>
