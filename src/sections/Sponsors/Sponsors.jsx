@@ -20,7 +20,6 @@ const Sponsor = (props) => {
 const Sponsors = () => {
 	const [sponsorText] = useStaticElement("sponsor")
 	const underLg = useMediaQuery('@media screen and (max-width: 1200px)')
-	console.log(underLg)
 	const sponsorCategories = useSponsorCategories()
 
 	return <Section container placeholder id="tamogatok">
