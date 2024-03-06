@@ -36,7 +36,7 @@ const ScheduleItem = (props) => {
             onClick={props.onClick}
         >
             <div className="images">
-                {props.presenters?.map((presenter, index) => (
+                {props.presenters?.map((presenter, index) => presenter && presenter.image && (
                     <div
                         key={presenter.id}
                         className="image"

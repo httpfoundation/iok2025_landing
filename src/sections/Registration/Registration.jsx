@@ -74,7 +74,7 @@ const Registration = (props) => {
 				newsletter,
 				onsite,
 				stage: stage || null,
-				vipCode: vipCode || null
+				vip_code: vipCode || null
 			})
 			setSuccess(true)
 			setError(false)

@@ -39,7 +39,7 @@ const HighlightedPresenters = (props) => {
 	return	(
 		<div className="presenters-grid">
 		{
-			presenters?.map((presenter, index) => (
+			presenters?.filter(presenter => presenter.image).map((presenter, index) => (
 				<Presenter
 					key={presenter.slug}
 					right={index % 2 === 1}
@@ -59,7 +59,7 @@ const AllPresenters = (props) => {
 	return	(
 		<div className="presenters-grid small">
 		{
-			presenters?.map((presenter, index) => (
+			presenters?.filter(presenter => presenter.image).map((presenter, index) => (
 				<Presenter
 					key={presenter.slug}
 					right={index % 2 === 1}

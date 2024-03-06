@@ -50,7 +50,6 @@ const Header = () => {
 			<Fade top delay={900}>
 				{/* <img src={BrandImgSmall} alt="HTTP Alapítvány" className="brand-image brand-image-small" /> */}
 				<img src={BrandImg} alt="HTTP Alapítvány" className="brand-image" />
-				<h1></h1> 
 				<Button href="#regisztracio" bold><Ticket />Regisztráció</Button>
 				<div className="hamburger-toggle" onClick={() => setMenuOpen(true)}>
 					<div className="bar"></div>
