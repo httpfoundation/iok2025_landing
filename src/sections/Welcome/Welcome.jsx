@@ -43,7 +43,7 @@ const calculateCountdown = (target) => {
 };
 
 const Welcome = () => {
-  const target = useMemo(() => new Date("2024-03-23T09:00:00"), []);
+  const target = useMemo(() => new Date("2025-03-29T09:30:00"), []);
   const [countdown, setCountdown] = useState({});
   const [welcomeText] = useStaticElement("welcome");
   useEffect(() => {
@@ -76,14 +76,14 @@ const Welcome = () => {
           <Fade left delay={350}>
             <img
               src={WelcomeImage}
-              alt="IOK 2024"
+              alt="IOK 2025"
               className="welcome-image-mobile"
               style={{ marginTop: "-80px" }}
             />
           </Fade>
           <Fade top delay={400}>
             <h1>
-              Informatikai Oktatási Konferencia <span className="highlight">2024</span>
+              Informatikai Oktatási Konferencia <span className="highlight">2025</span>
             </h1>
           </Fade>
           <Fade top delay={440}>
