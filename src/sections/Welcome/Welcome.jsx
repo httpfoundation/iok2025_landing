@@ -25,7 +25,7 @@ const Overview = (props) => {
       </OverviewItem>
       <OverviewItem>
         <Location />
-        (Budapest) || (Online)
+        (Veszprém) || (Online)
       </OverviewItem>
     </div>
   );
