@@ -1,7 +1,7 @@
-import {useLocation} from "react-router";
+import { useLocation } from "react-router";
 
 export const useRegId = () => {
-    const location = useLocation();
-    const query = new URLSearchParams(location.search);
-    return query.get('q') ?? '';
-}
+  const location = useLocation();
+  const query = new URLSearchParams(location.search);
+  return query.get("q") ?? "";
+};
