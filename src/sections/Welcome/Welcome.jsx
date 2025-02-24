@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { StructuredText } from "react-datocms";
 import Fade from "react-reveal/Fade";
-import WelcomeImage from "../../assets/img/welcome-img-lila.webp";
+import WelcomeImage from "../../assets/img/welcome-img-2025-veszprem.png";
 import Bubble from "../../components/Bubble/Bubble";
 import Button from "../../components/Button/Button";
 import Section from "../../components/Section/Section";
@@ -58,8 +58,8 @@ const Welcome = () => {
   return (
     <Section container placeholder id="welcome">
       <div className="row">
-        <div className="col-md-7 col-12">
-          <div className="bubbles">
+        <div className="col-md-6 col-12">
+          {/* <div className="bubbles">
             <Fade left delay={200}>
               <Bubble title={countdown.days} subtitle="nap" corners={["bottom-left"]} />
             </Fade>
@@ -69,6 +69,23 @@ const Welcome = () => {
             <Fade left delay={0}>
               <Bubble title={countdown.minutes} subtitle="perc" corners={["top-left"]} />
             </Fade>
+          </div> */}
+          <div className="countdown">
+            <div className="triangle"></div>
+            <div className="countdown-item">
+              <div className="number">{countdown.days}</div>
+              <div className="unit">nap</div>
+            </div>
+            <div className="triangle"></div>
+            <div className="countdown-item">
+              <div className="number">{countdown.hours}</div>
+              <div className="unit">óra</div>
+            </div>
+            <div className="triangle"></div>
+            <div className="countdown-item">
+              <div className="number">{countdown.minutes}</div>
+              <div className="unit">perc</div>
+            </div>
           </div>
           <Fade top delay={300}>
             <Overview date={target} />

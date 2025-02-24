@@ -11,7 +11,7 @@ header {
 	padding: 15px 0;
 	z-index: 100;
 	transition: all 0.2s ease-out;
-	background-color: $bg-secondary;
+	background-color: transparent;
 
 	&>div.container {
 		display: flex;
@@ -87,9 +87,8 @@ header {
 		.bar {
 			width: 100%;
 			height: 3px;
-			background-color: $iok-yellow;
+			background-color: $iok-purple;
 			transition: all 0.2s ease-out;
-			border-radius: 10px;
 		}
 
 		&.close {
@@ -150,7 +149,7 @@ header {
 				display: block;	
 				border: 2px solid $lightgrey;
 				padding: 10px 0;
-				border-radius: 100px;
+				border-radius: 0px;
 				text-decoration: none;
 				color: $grey;
 				font-weight: 700;
