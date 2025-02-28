@@ -1,75 +1,85 @@
-@import '../../theme.scss';
+@import "../../theme.scss";
 #regisztracio {
-	h2.title {
-		color: $light;
-		.highlight {
-			color: $primary;
-		}
-	
-	}
-	.text {
-		color: $light;
-	}
-	h3 {
-		text-align: center;
-		color: $light;
-	}
-	p.subtitle{
-		margin-bottom: 0;
-	}
-	.reg-form {
-		max-width: 700px;
-		margin: auto;
-		input, textarea {
-			margin-bottom: 18px;
-		}
-	}
-	.form-label, .form-check-label {
-		color: $light;
-		font-size: 0.90rem;
-		font-weight: 600;		
-	}
-	p {
-		color: $light;
-		font-size: 0.90rem;
-	}
-	.form-check-input:checked {
-		background-color: $bg-primary;
-		border-color: $bg-primary;
-	}
-	.form-check-input:focus {
-		box-shadow: none;
-	}
-	.form-check {
-	}
-	.form-control, .form-select {
-		&:focus {
-			box-shadow: 0 0 0 0.1rem $primary;
-			border-color: $primary;
-		}
-	}
-	input, select, select option {
-		font-family: sans-serif;
-		border-radius: 0;
-		accent-color: $primary;
-	}
-	.alert {
-		font-size: 0.9rem;
-		line-height: 0.9;
-		font-weight: 600;
-		padding: 1.05rem 1rem 0.9rem 1rem;
-	}
-	button {
-		position: relative;
-	}
+  h2.title {
+    color: $light;
+    .highlight {
+      color: $primary;
+    }
+  }
+  .text {
+    color: $light;
+  }
+  h3 {
+    text-align: center;
+    color: $light;
+  }
+  p.subtitle {
+    margin-bottom: 0;
+  }
+  .reg-form {
+    max-width: 700px;
+    margin: auto;
+    input,
+    textarea {
+      margin-bottom: 18px;
+    }
+  }
+  .form-label,
+  .form-check-label {
+    color: $light;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  p {
+    color: $light;
+    font-size: 0.9rem;
+  }
+  .form-check-input:checked {
+    background-color: $bg-primary;
+    border-color: $bg-primary;
+  }
+  .form-check-input:focus {
+    box-shadow: none;
+  }
+  .form-check {
+  }
+  .form-control,
+  .form-select {
+    &:focus {
+      box-shadow: 0 0 0 0.1rem $primary;
+      border-color: $primary;
+    }
+  }
+  input,
+  select,
+  select option {
+    font-family: sans-serif;
+    border-radius: 0;
+    accent-color: $primary;
+  }
+  input[type="radio"] {
+    accent-color: white;
+    border: 1px solid white !important;
+    background-color: $dark;
+  }
+  .alert {
+    font-size: 0.9rem;
+    line-height: 0.9;
+    font-weight: 600;
+    padding: 1.05rem 1rem 0.9rem 1rem;
+  }
+  button {
+    position: relative;
+  }
 }
 
 .modal {
-	.modal-title.h4 {
-		font-size: 1.2rem;
-		font-weight: 600;
-	}
-	.modal-body {
-		font-size: 0.92rem;
-	}
+  .modal-title.h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  .modal-body {
+    font-size: 0.92rem;
+  }
 }
+

@@ -40,7 +40,7 @@ const Registration = (props) => {
   const [phone, setPhone] = useState("");
   const [city, setCity] = useState("");
   const [newsletter, setNewsletter] = useState(false);
-  const [onsite, setOnsite] = useState(false);
+  const [onsite, setOnsite] = useState(true);
   const [stage, setStage] = useState("");
   const [privacy, setPrivacy] = useState(false);
 
@@ -203,31 +203,50 @@ const Registration = (props) => {
                   className=""
                   style={{
                     padding: "0.8rem",
-                    border: "1px solid #ced4da",
+                    border: "1px solid #ced4da40",
                     borderRadius: "0.25rem",
                   }}
                 >
                   <StructuredText
                     data={vipCode ? registrationFormatVipText : registrationFormatText}
                   />
-                  <div className="form-check">
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      name="online"
-                      id="onsite-field"
-                      checked={onsite}
-                      onChange={(e) => {
-                        setOnsite(e.target.checked);
-                        if (!e.target.checked) {
-                          setStage("");
-                        }
-                      }}
-                    />
-                    <label className="form-check-label" htmlFor="onsite-field">
-                      {registrationFormatCheckboxText}
-                    </label>
-                  </div>
+                  <fieldset className="d-flex flex-column gap-1" style={{ marginBottom: "-1rem" }}>
+                    <div className="form-check">
+                      <input
+                        className="form-check-input"
+                        type="radio"
+                        name="reszvetel"
+                        id="onsite-field"
+                        checked={onsite}
+                        onChange={(e) => {
+                          setOnsite(true);
+                          if (!e.target.checked) {
+                            setStage("");
+                          }
+                        }}
+                        style={{ borderRadius: "50%" }}
+                      />
+                      <label className="form-check-label" htmlFor="onsite-field">
+                        Személyesen veszek részt a konferencián
+                      </label>
+                    </div>
+                    <div className="form-check">
+                      <input
+                        className="form-check-input"
+                        type="radio"
+                        name="reszvetel"
+                        id="online-field"
+                        checked={!onsite}
+                        onChange={(e) => {
+                          setOnsite(false);
+                        }}
+                        style={{ borderRadius: "50%" }}
+                      />
+                      <label className="form-check-label" htmlFor="online-field">
+                        Online kapcsolódom be a konferenciára
+                      </label>
+                    </div>
+                  </fieldset>
                   {onsite && (
                     <>
                       <label className="form-label  mt-4">
