@@ -11,7 +11,12 @@ const Sponsor = (props) => {
   return (
     <div className={`sponsor ${props.fullWidth ? "w-full" : ""}`}>
       <a href={props.link} target="_blank" rel="noopener noreferrer">
-        <img src={props.image} alt={props.name} {...props} />
+        <img
+          src={props.image}
+          alt={props.name}
+          {...props}
+          style={{ maxWidth: "100%", objectFit: "contain" }}
+        />
       </a>
     </div>
   );
@@ -41,10 +46,10 @@ const Sponsors = () => {
               <Sponsor
                 image={sponsor.logo.url}
                 link={sponsor.url}
-                fullWidth={
-                  category?.sponsor?.length % (underLg ? 2 : 3) !== 0 &&
-                  sponsorIdx === category?.sponsor?.length - 1
-                }
+                // fullWidth={
+                //   category?.sponsor?.length % (underLg ? 2 : 3) !== 0 &&
+                //   sponsorIdx === category?.sponsor?.length - 1
+                // }
               />
             ))}
           </div>
