@@ -198,7 +198,6 @@ const Registration = (props) => {
 
             {registrationOnsite && (
               <>
-                <label className="form-label">Jelentkezés személyes részvételre</label>
                 <div
                   className=""
                   style={{
