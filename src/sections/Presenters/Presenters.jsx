@@ -14,16 +14,16 @@ const Presenter = (props) => {
 		<div className="presenter-card" style={props.style ? props.style : {}}>
 				<div className="presenter-wrapper">
 				<div className="presenter-img" style={{ backgroundImage: "url('" + props.imageUrl + "')"}}>
-					<Bubble
-						smallText
-						darkText
-						title={props.name}
-						subtitle={`${props.title}, ${props.company}`}
-						size="large"
-						shadow
-						color={props.highlight ? "primary" : "light"}
-						corners={[props.right ? "bottom-right" : "top-left"]}
-					></Bubble>
+					<div className={`presenter-square ${props.highlight ? "highlight" : ""}`}>
+						<div className="bg"></div>
+						<div className="inner">
+							<div className="name">{props.name}</div>
+							<div className="title">{props.title}, {props.company}</div>
+						</div>
+						<div className="decorator">
+
+						</div>
+					</div>
 				</div>
 				<div className="presenter-name-mobile">
 					<div className="name">{props.name}</div>

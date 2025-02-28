@@ -21,15 +21,16 @@ hr {
 }
 
 a.link {
-	color: $h1-color;
+	color: lighten($primary, 15%);
 	transition: 0.1s ease-out;
 	text-decoration: none;
 	&:hover {
-		color: adjust-color($color: $h1-color, $lightness: -10%);
+		color: $primary;
 		text-decoration: underline;
 	}
 }
 
 h2 {
 	color: $dark;
+	text-transform: uppercase;
 }

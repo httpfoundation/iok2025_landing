@@ -6,7 +6,7 @@
 		color: #fff;	
 	}
 	.title {
-		.highlight {color: $iok-yellow};
+		.highlight {color: $light;};
 	}
 
 		
@@ -72,6 +72,9 @@
 					height: 70px;
 					*/
 				}
+				.presenter-square {
+					display: none !important;
+				}
 				.presenter-name-mobile {
 					flex: 1;
 					box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
@@ -79,7 +82,7 @@
 					position: relative;
 					bottom: 0;
 					background-color: $light;
-					border-radius: 0 0 10px 10px;
+					border-radius: 0;
 					padding: 5px;
 					width: 100%;
 					min-height: 80px;
@@ -116,7 +119,7 @@
 				height: 350px;
 				background-size: cover;
 				background-position: center;
-				border-radius: 12px;
+				border-radius: 0;
 				position: relative;
 				transition: all 0.4s ease-in-out;
 				@include mobile {
@@ -135,6 +138,66 @@
 					top: 50%;
 					cursor: default;
 				}
+
+				.presenter-square {
+					position: absolute;
+					right: -50%;
+					top: 50%;
+
+					transition: all 1s ease-out;
+
+
+					width: 210px;
+					height: 210px;
+
+					transform: rotate(45deg);
+
+
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					
+					.inner {
+						width: 90%;
+						transform: rotate(-45deg);
+
+						.name {
+							font-weight: 700;
+							font-size: 1.2rem;
+							color: $light;
+							margin-bottom: 5px;
+						}
+						.title {
+							font-size: 0.8rem;
+							color: darken($light, 10%);
+						}
+					}
+
+					.bg {
+						background-color: $bg-primary;
+						width: 100%;
+						height: 100%;
+						position: absolute;
+					}
+
+					&.highlight {
+						.bg {
+							background-color: $primary;
+						}
+					}
+
+					.decorator {
+						position: absolute;
+						transition: all 0.8s ease-out;
+						top: -10%;
+						right: -10%;
+						width: 70%;
+						height: 70%;
+						background: linear-gradient(0deg, #50D1FF 0%, #307D99 100%);
+						opacity: 0.5;
+						z-index: -1;
+					}
+				}
 			}
 			&:nth-of-type(even) {
 				justify-self: end;
@@ -143,6 +206,17 @@
 					left: -50%;
 					top: unset;
 					bottom: 50%;
+				}
+				.presenter-square {
+					left: -50%;
+					top: unset;
+					bottom: 50%;
+
+					.decorator {
+						top: unset;
+						bottom: -10%;
+						right: -10%;
+					}
 				}
 			}
 			.presenter-name-mobile {
@@ -161,6 +235,9 @@
 					height: 70px;
 					*/
 				}
+				.presenter-square {
+					display: none !important;
+				}
 				.presenter-name-mobile {
 					flex: 1 1 auto;
 					box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
@@ -168,7 +245,7 @@
 					position: relative;
 					bottom: 0;
 					background-color: $light;
-					border-radius: 0 0 10px 10px;
+					border-radius: 0;
 					padding: 8px 5px;
 					width: 100%;
 					.name {
@@ -186,10 +263,22 @@
 				.bubble {
 					transform: translate(10px, 10px);
 				}
+				.presenter-square {
+					transform: rotate(45deg) translate(10px, -10px);
+					.decorator {
+						transform: translate(10px, -10px);
+					}
+				}
 			}
 			&:nth-of-type(even):hover {
 				.bubble {
 					transform: translate(-10px, -10px);
+				}
+				.presenter-square {
+					transform: rotate(45deg) translate(-10px, 10px);
+					.decorator {
+						transform: translate(10px, 10px);
+					}
 				}
 			}
 		}

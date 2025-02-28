@@ -9,7 +9,7 @@
 		transition: all 0.2s ease-out;
 		padding: 10px;
 		height: auto;
-		border-radius: 40px;
+		border-radius: 0px;
 		@include mobile {
 			height: auto;
 		}
@@ -99,11 +99,10 @@
 		&.open {
 			@include desktop {
 				padding: 20px;
-				border-radius: 20px;
+				border-radius: 0px;
 				.images {
 					width: 200px;
 					.image {
-						border-bottom-left-radius: 0;
 						width: 200px;
 					}
 				}
@@ -112,7 +111,6 @@
 					.images {
 						width: 160px;
 						.image {
-							border-bottom-left-radius: 0;
 							width: 150px;
 						}
 					}
@@ -165,10 +163,10 @@
 			
 		}
 		.separator-text {
-			color: $iok-light;
+			color: $light;
 			border: 2px solid $primary;
 			height: 45px;
-			border-radius: 22.5px;
+			border-radius: 0px;
 			background-color: $bg-primary;
 			padding: 5px 30px;
 			font-size: 0.9rem;
@@ -180,7 +178,7 @@
 			top: 50%;
 			transform: translate(-50%, -50%);
 			svg {
-				fill: $iok-light;
+				fill: $light;
 				height: 15px;
 				margin-right: 10px;
 				transform: translateY(-1px);
@@ -192,7 +190,7 @@
 		width: 95%;
 		padding: 40px 40px;
 		border: 5px solid $primary;
-		border-radius: 15px;
+		border-radius: 0px;
 		margin: auto;
 		background-color: rgba(255, 255, 255, 0.2);
 		// background-color: $iok-lightgreen;
@@ -216,14 +214,14 @@
 			grid-template-columns: repeat(3, 1fr);
 			border: 3px solid $bg-primary;
 			height: 55px;
-			border-radius: 100px;
+			border-radius: 0px;
 			position: relative;
 			@include mobile {
 				width: 100%;
 			}
 			.tab-button {
-				border-radius: 100px;
-				height: 50px;
+				border-radius: 0px;
+				height: 49px;
 				color: $grey;
 				overflow: hidden;
 				cursor: pointer;
@@ -248,7 +246,7 @@
 				width: 0;
 				height: 52px;
 				transform: translate(-1px, -1px);
-				border-radius: 100px;
+				border-radius: 0px;
 				transition: all 0.2s ease-in-out;
 			}
 		}

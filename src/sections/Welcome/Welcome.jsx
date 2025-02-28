@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { StructuredText } from "react-datocms";
 import Fade from "react-reveal/Fade";
 import WelcomeImage from "../../assets/img/welcome-img-2025-veszprem.png";
+import WelcomeImageMobile from "../../assets/img/welcome-img-2025-veszprem-small.png";
 import Bubble from "../../components/Bubble/Bubble";
 import Button from "../../components/Button/Button";
 import Section from "../../components/Section/Section";
@@ -90,13 +91,13 @@ const Welcome = () => {
           <Fade top delay={300}>
             <Overview date={target} />
           </Fade>
-          <Fade left delay={350}>
+          <Fade right delay={350}>
             <img
-              src={WelcomeImage}
+              src={WelcomeImageMobile}
               alt="IOK 2025"
               className="welcome-image-mobile"
-              style={{ marginTop: "-80px" }}
             />
+            <div className="welcome-image-mobile-spacer"></div>
           </Fade>
           <Fade top delay={400}>
             <h1>
@@ -123,6 +124,7 @@ const Welcome = () => {
       </div>
       <Fade right duration={1300}>
         <img src={WelcomeImage} alt="" className="welcome-image" />
+        <img src={WelcomeImageMobile} alt="" className="welcome-image-small" />
       </Fade>
     </Section>
   );

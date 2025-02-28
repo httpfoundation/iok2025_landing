@@ -1,4 +1,4 @@
-import BrandImg from "../assets/img/http-iok-logo-2024-green.png";
+import BrandImg from "../assets/img/http-iok-logo-2025.png";
 import "./Header.scss";
 //import BrandImgSmall from '../assets/img/http-iok-logo-small.png'
 import useScrollPosition from "@react-hook/window-scroll";
@@ -52,7 +52,7 @@ const Header = () => {
       <div className="container">
         <Fade top delay={900}>
           {/* <img src={BrandImgSmall} alt="HTTP Alapítvány" className="brand-image brand-image-small" /> */}
-          <img src={BrandImg} alt="HTTP Alapítvány" className="brand-image" />
+          <img src={BrandImg} alt="HTTP Alapítvány - IOK 2025" className="brand-image" />
           <h1></h1>
           <Button href="#regisztracio" bold>
             <Ticket />
