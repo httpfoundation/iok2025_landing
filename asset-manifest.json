@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.d4aabd34.css",
-    "main.js": "/static/js/main.0e5797d4.js",
-    "static/media/welcome-img-2025-veszprem.png": "/static/media/welcome-img-2025-veszprem.60e36de1d7e032b1b22c.png",
-    "static/media/http-iok-logo-2024-green.png": "/static/media/http-iok-logo-2024-green.62c23df8229c2e0a07be.png",
+    "main.css": "/static/css/main.64b77165.css",
+    "main.js": "/static/js/main.59d0b52f.js",
+    "static/media/welcome-img-2025-veszprem.png": "/static/media/welcome-img-2025-veszprem.853ff926d9201aa34c8b.png",
+    "static/media/welcome-img-2025-veszprem-small.png": "/static/media/welcome-img-2025-veszprem-small.957cb7f2fd4406de0f50.png",
+    "static/media/http-iok-logo-2025.png": "/static/media/http-iok-logo-2025.fb811d6fd10b777aa3a6.png",
     "index.html": "/index.html",
-    "main.d4aabd34.css.map": "/static/css/main.d4aabd34.css.map",
-    "main.0e5797d4.js.map": "/static/js/main.0e5797d4.js.map"
+    "main.64b77165.css.map": "/static/css/main.64b77165.css.map",
+    "main.59d0b52f.js.map": "/static/js/main.59d0b52f.js.map"
   },
   "entrypoints": [
-    "static/css/main.d4aabd34.css",
-    "static/js/main.0e5797d4.js"
+    "static/css/main.64b77165.css",
+    "static/js/main.59d0b52f.js"
   ]
 }
