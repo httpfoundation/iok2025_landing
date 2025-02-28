@@ -296,7 +296,7 @@ const Registration = (props) => {
               <label className="form-check-label" htmlFor="toc-field">
                 Elolvastam és elfogadom az{" "}
                 <a
-                  href="https://www.datocms-assets.com/151170/1738841800-adatkezelesi_tajekoztato_iok2025-pdf.pdf"
+                  href="https://www.datocms-assets.com/151170/1740762747-adatkezelesi_tajekoztato_iok2025.pdf"
                   target="_blank"
                   className="link"
                   rel="noreferrer"
