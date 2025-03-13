@@ -1,179 +1,180 @@
-@import '../theme.scss';
+@import "../theme.scss";
 body {
-	
 }
 
 header {
-	position: fixed;
-	width: 100vw;
-	top: 0;
-	left: 0;
-	padding: 15px 0;
-	z-index: 100;
-	transition: all 0.2s ease-out;
-	background-color: transparent;
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  padding: 15px 0;
+  z-index: 100;
+  transition: all 0.2s ease-out;
+  background-color: transparent;
 
-	&>div.container {
-		display: flex;
-		align-content: center;
-		align-items: center;
-	}
-	.brand-image {
-		height: 60px;
-		transition: all 0.1s ease-out;
-	}
-	h1 {
-		font-size: 2.3rem;
-		font-weight: 700;
-		margin: 0;
-		flex: 1;
-		padding-left: 40px;
-		padding-top: 5px;
-		transition: all 0.1s ease-out;
-		color: rgb(20 71 92);
-	}
-	.brand-image:nth-child(1) {
-		display: block;
-	}
-	.brand-image:nth-child(2) {
-		display: block;
-	}
-	&:not(.transparent) {
-		background-color: rgba($bg-secondary, 0.85);
-		backdrop-filter: blur(10px);
-		box-shadow: 0px 10px 40px #001922;;
-		padding: 10px 0;
-		@include desktop {
-			.brand-image {
-				height: 40px;
-			}
-			h1 {
-				font-size: 1.8rem;
-			}
-		}
-		.brand-image:nth-child(1) {
-			display: block;
-		}
-		.brand-image:nth-child(2) {
-			display: block;
-		}
-	}
-	
+  & > div.container {
+    display: flex;
+    align-content: center;
+    align-items: center;
+  }
+  .brand-image {
+    height: 55px;
+    transition: all 0.1s ease-out;
+  }
+  h1 {
+    font-size: 2.3rem;
+    font-weight: 700;
+    margin: 0;
+    flex: 1;
+    padding-left: 40px;
+    padding-top: 5px;
+    transition: all 0.1s ease-out;
+    color: rgb(20 71 92);
+  }
+  .brand-image:nth-child(1) {
+    display: block;
+  }
+  .brand-image:nth-child(2) {
+    display: block;
+  }
+  &:not(.transparent) {
+    background-color: rgba($bg-secondary, 0.85);
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 10px 40px #001922;
+    padding: 10px 0;
+    @include desktop {
+      .brand-image {
+        height: 40px;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
+    .brand-image:nth-child(1) {
+      display: block;
+    }
+    .brand-image:nth-child(2) {
+      display: block;
+    }
+  }
 
-	@include mobile {
-		padding: 15px 0;
-		.brand-image {
-			height: 40px;
-		}
-		h1 {
-			font-size: 1.5rem;
-			padding-left: 20px;
-		}
-		.button {
-			display: none;
-		}
-	}
+  @include mobile {
+    padding: 15px 0;
+    .brand-image {
+      height: 45px;
+      width: 170px;
+      object-fit: cover;
+      object-position: right;
+    }
+    h1 {
+      font-size: 1.5rem;
+      padding-left: 20px;
+    }
+    .button {
+      display: none;
+    }
+  }
 
-	.hamburger-toggle {
-		width: 30px;
-		height: 30px;
-		display: grid;
-		place-items: center;
-		justify-self: flex-end;
-		cursor: pointer;
-		transition: all 0.2s ease-out;
-		margin-left: 20px;
+  .hamburger-toggle {
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    justify-self: flex-end;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+    margin-left: 20px;
 
-		.bar {
-			width: 100%;
-			height: 3px;
-			background-color: $iok-purple;
-			transition: all 0.2s ease-out;
-		}
+    .bar {
+      width: 100%;
+      height: 3px;
+      background-color: $iok-purple;
+      transition: all 0.2s ease-out;
+    }
 
-		&.close {
-			.bar {
-				background-color: $bg-secondary;
-			}
+    &.close {
+      .bar {
+        background-color: $bg-secondary;
+      }
 
-			margin-left: 0;
-			.bar:nth-child(1) {
-				transform: translateY(10px)  rotate(45deg);
-			}
-			.bar:nth-child(2) {
-				opacity: 0;
-			}
-			.bar:nth-child(3) {
-				transform: translateY(-10px) rotate(-45deg);
-			}
-		}
+      margin-left: 0;
+      .bar:nth-child(1) {
+        transform: translateY(10px) rotate(45deg);
+      }
+      .bar:nth-child(2) {
+        opacity: 0;
+      }
+      .bar:nth-child(3) {
+        transform: translateY(-10px) rotate(-45deg);
+      }
+    }
 
-		@include mobile{
-			margin-left: 0;
-			margin-right: 20px;
-		}
-	}
+    @include mobile {
+      margin-left: 0;
+      margin-right: 20px;
+    }
+  }
 
-	.hamburger-menu {
-		position: fixed;
-		right: -400px;
-		top: 0;
-		height: 100vh;
-		width: 400px;
-		max-width: calc(100vw - 20px);
-		background-color: rgb(231, 231, 231);
-		box-shadow: 0px 10px 40px rgba(51, 51, 51, 0.2);
-		transition: all 0.2s ease-out;
-		z-index: 100;
-		&.open {
-			right: 0;
-		}
+  .hamburger-menu {
+    position: fixed;
+    right: -400px;
+    top: 0;
+    height: 100vh;
+    width: 400px;
+    max-width: calc(100vw - 20px);
+    background-color: rgb(231, 231, 231);
+    box-shadow: 0px 10px 40px rgba(51, 51, 51, 0.2);
+    transition: all 0.2s ease-out;
+    z-index: 100;
+    &.open {
+      right: 0;
+    }
 
-		padding: 20px;
-		text-align: center;
+    padding: 20px;
+    text-align: center;
 
-		.button {
-			display: block;
-			font-weight: 700;
-			svg {
-				path {
-					stroke-width: 10px;
-				}
-			}
-		}
+    .button {
+      display: block;
+      font-weight: 700;
+      svg {
+        path {
+          stroke-width: 10px;
+        }
+      }
+    }
 
-		.hamburger-menu-items {
-			margin-top: 40px;
-			a {
-				margin: 20px 0;
-				display: block;	
-				border: 2px solid $lightgrey;
-				padding: 10px 0;
-				border-radius: 0px;
-				text-decoration: none;
-				color: $grey;
-				font-weight: 700;
-				transition: all 0.1s ease-out;
-				&:hover {
-					background-color: rgba(255, 255, 255, 0.6);
-					color: adjust-color($color: $primary, $lightness: -10%)
-				}
-			}
-		}
-	}
+    .hamburger-menu-items {
+      margin-top: 40px;
+      a {
+        margin: 20px 0;
+        display: block;
+        border: 2px solid $lightgrey;
+        padding: 10px 0;
+        border-radius: 0px;
+        text-decoration: none;
+        color: $grey;
+        font-weight: 700;
+        transition: all 0.1s ease-out;
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.6);
+          color: adjust-color($color: $primary, $lightness: -10%);
+        }
+      }
+    }
+  }
 
-	.backdrop {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100vw;
-		height: 100vh;
-		z-index: 99;
-		display: none;
-		&.open {
-			background-color: rgba(0, 0, 0, 0.5);
-			display: block;
-		}
-	}
-	
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 99;
+    display: none;
+    &.open {
+      background-color: rgba(0, 0, 0, 0.5);
+      display: block;
+    }
+  }
 }
+
