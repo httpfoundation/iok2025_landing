@@ -41,6 +41,7 @@ const Registration = (props) => {
   const [city, setCity] = useState("");
   const [newsletter, setNewsletter] = useState(false);
   const [onsite, setOnsite] = useState(true);
+  const [bus, setBus] = useState(false);
   const [stage, setStage] = useState("");
   const [privacy, setPrivacy] = useState(false);
 
@@ -77,6 +78,7 @@ const Registration = (props) => {
         onsite,
         stage: stage || null,
         vip_code: vipCode || null,
+        bus,
       });
       setSuccess(true);
       setError(false);
@@ -89,6 +91,7 @@ const Registration = (props) => {
       setOnsite(false);
       setStage(null);
       setPrivacy(false);
+      setBus(false);
       if (vipCode)
         window.history.replaceState(
           {},
@@ -287,6 +290,20 @@ const Registration = (props) => {
               <input
                 className="form-check-input"
                 type="checkbox"
+                name="bus"
+                id="bus-field"
+                checked={bus}
+                onChange={(e) => setBus(e.target.checked)}
+              />
+              <label className="form-check-label" htmlFor="bus-field">
+                Szeretnék a szervezők által ingyenesen biztosított buszjárattal utazni a
+                rendezvényre
+              </label>
+            </div>
+            <div className="form-check mb-4 mt-4">
+              <input
+                className="form-check-input"
+                type="checkbox"
                 id="toc-field"
                 checked={privacy}
                 required
@@ -302,7 +319,7 @@ const Registration = (props) => {
                 >
                   Adatkezelési Tájékoztató
                 </a>
-                ban foglaltakat.*
+                ban foglaltakat*
               </label>
             </div>
             <div className="my-4" />
