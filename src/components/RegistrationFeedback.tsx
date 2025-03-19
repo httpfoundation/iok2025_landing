@@ -1,11 +1,8 @@
-import Section from "./Section/Section";
-import Title from "./Title/Title";
-import Text from "./Text/Text";
+import { useEffect, useState } from "react";
+import Modal from "react-bootstrap/Modal";
 import { StructuredText } from "react-datocms";
 import { useStaticElement } from "../tools/datoCmsTools";
-import Modal from "react-bootstrap/Modal";
 import Button from "./Button/Button";
-import { useState, useEffect } from "react";
 
 const RegistrationFeedback = () => {
   const feedbackCode = new URLSearchParams(window.location.search).get("v") || null;
@@ -19,6 +16,7 @@ const RegistrationFeedback = () => {
     "registrationFeedbackWithoutTranslation"
   );
   const [registrationFeedbackError] = useStaticElement("registrationFeedbackError");
+  const [registrationFeedbackIWantBus] = useStaticElement("registrationFeedbackWithBus");
 
   const awsLampdaLink =
     "https://wy8qg2hpoh.execute-api.eu-west-1.amazonaws.com/default/iokRegistrationFeedback";
@@ -45,6 +43,7 @@ const RegistrationFeedback = () => {
     registrationFeedbackTransaltion,
     registrationFeedbackWithoutTranslation,
     registrationFeedbackError,
+    registrationFeedbackIWantBus,
   ][answerCategoryCode];
 
   return (
