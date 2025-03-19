@@ -209,9 +209,9 @@ const Registration = (props) => {
                     borderRadius: "0.25rem",
                   }}
                 >
-                  <StructuredText
+                  {/* <StructuredText
                     data={vipCode ? registrationFormatVipText : registrationFormatText}
-                  />
+                  /> */}
                   <fieldset className="d-flex flex-column gap-1" style={{ marginBottom: "-1rem" }}>
                     <div className="form-check">
                       <input
@@ -232,6 +232,46 @@ const Registration = (props) => {
                         Személyesen veszek részt a konferencián
                       </label>
                     </div>
+
+                    {onsite && (
+                      <div
+                        className="d-flex flex-column gap-1 ml-5"
+                        style={{ marginLeft: "1.5rem" }}
+                      >
+                        <label className="form-label">
+                          Melyik délutáni szekción szeretnél részt venni?*
+                        </label>
+                        <select
+                          className="form-select"
+                          required={onsite}
+                          value={stage}
+                          onChange={(e) => setStage(e.target.value)}
+                        >
+                          <option value={""} hidden></option>
+                          {allStages?.slice(1).map((stage, index) => (
+                            <option key={index} value={stage.id}>
+                              {stage.name}
+                            </option>
+                          ))}
+                        </select>
+
+                        <div className="form-check mb-4 mt-4">
+                          <input
+                            className="form-check-input"
+                            type="checkbox"
+                            name="bus"
+                            id="bus-field"
+                            checked={bus}
+                            onChange={(e) => setBus(e.target.checked)}
+                          />
+                          <label className="form-check-label" htmlFor="bus-field">
+                            Szeretnék a szervezők által ingyenesen biztosított buszjárattal utazni a
+                            rendezvényre
+                          </label>
+                        </div>
+                      </div>
+                    )}
+
                     <div className="form-check">
                       <input
                         className="form-check-input"
@@ -241,6 +281,8 @@ const Registration = (props) => {
                         checked={!onsite}
                         onChange={(e) => {
                           setOnsite(false);
+                          setBus(false);
+                          setStage("");
                         }}
                         style={{ borderRadius: "50%" }}
                       />
@@ -249,26 +291,6 @@ const Registration = (props) => {
                       </label>
                     </div>
                   </fieldset>
-                  {onsite && (
-                    <>
-                      <label className="form-label  mt-4">
-                        Melyik délutáni szekción szeretnél részt venni?*
-                      </label>
-                      <select
-                        className="form-select"
-                        required={onsite}
-                        value={stage}
-                        onChange={(e) => setStage(e.target.value)}
-                      >
-                        <option value={""} hidden></option>
-                        {allStages?.slice(1).map((stage, index) => (
-                          <option key={index} value={stage.id}>
-                            {stage.name}
-                          </option>
-                        ))}
-                      </select>
-                    </>
-                  )}
                 </div>
               </>
             )}
@@ -286,20 +308,7 @@ const Registration = (props) => {
                 információkról
               </label>
             </div>
-            <div className="form-check mb-4 mt-4">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                name="bus"
-                id="bus-field"
-                checked={bus}
-                onChange={(e) => setBus(e.target.checked)}
-              />
-              <label className="form-check-label" htmlFor="bus-field">
-                Szeretnék a szervezők által ingyenesen biztosított buszjárattal utazni a
-                rendezvényre
-              </label>
-            </div>
+
             <div className="form-check mb-4 mt-4">
               <input
                 className="form-check-input"
