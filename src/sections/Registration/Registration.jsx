@@ -255,7 +255,7 @@ const Registration = (props) => {
                           ))}
                         </select>
 
-                        <div className="form-check mb-4 mt-4">
+                        {/* <div className="form-check mb-4 mt-4">
                           <input
                             className="form-check-input"
                             type="checkbox"
@@ -268,7 +268,7 @@ const Registration = (props) => {
                             Szeretnék a szervezők által ingyenesen biztosított buszjárattal utazni a
                             rendezvényre
                           </label>
-                        </div>
+                        </div> */}
                       </div>
                     )}
 
