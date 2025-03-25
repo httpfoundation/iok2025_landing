@@ -40,7 +40,7 @@ const Registration = (props) => {
   const [phone, setPhone] = useState("");
   const [city, setCity] = useState("");
   const [newsletter, setNewsletter] = useState(false);
-  const [onsite, setOnsite] = useState(true);
+  const [onsite, setOnsite] = useState(false);
   const [bus, setBus] = useState(false);
   const [stage, setStage] = useState("");
   const [privacy, setPrivacy] = useState(false);
