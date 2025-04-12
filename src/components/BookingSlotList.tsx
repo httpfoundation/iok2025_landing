@@ -1,7 +1,6 @@
-import { EscapeRoomMember } from "../hooks/useEscapeRoomBookings";
-import { Grid } from "@mui/material";
-import { BookingSlot } from "./BookingSlot";
-import React from "react";
+import { EscapeRoomMember } from '../hooks/useEscapeRoomBookings';
+import { Grid } from '@mui/material';
+import { BookingSlot } from './BookingSlot';
 
 interface BookingSlotListProps {
   members: EscapeRoomMember[];

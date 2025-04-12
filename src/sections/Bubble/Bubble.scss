@@ -1,0 +1,6 @@
+@use 'sass:color';
+@use '../../theme' as theme;
+
+.bubble {
+  background-color: color.adjust(theme.$primary, $lightness: 10%);
+} 

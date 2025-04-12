@@ -1,11 +1,12 @@
-@import '../../theme.scss';
+@use 'sass:color';
+@use '../../theme' as theme;
 
 .button {
-	background-color: $iok-purple;
+	background-color: theme.$iok-purple;
 	&.header {
-		background-color: $iok-purple;
+		background-color: theme.$iok-purple;
 	}
-	color: $light;
+	color: theme.$light;
 	border: 0;
 	height: 45px;
 	/* border-radius: 22.5px; */
@@ -14,14 +15,14 @@
 	line-height: 38px;
 	box-shadow: 0 0px 7px 0px rgb(0 0 0 / 20%);
 	&.glow {
-		box-shadow: 0px 2px 13px adjust-color($color: $iok-purple, $alpha: 0.2);
+		box-shadow: 0px 2px 13px color.adjust(theme.$iok-purple, $alpha: 0.2);
 	}
 	transition: all 0.1s ease-out;
 	text-decoration: none;
 	display: inline-block;
 	
 	svg {
-		fill: $light;
+		fill: theme.$light;
 		height: 15px;
 		margin-right: 10px;
 		transform: translateY(-1px);
@@ -31,11 +32,10 @@
 		transform: translateY(-2px);
 		box-shadow: 0 3px 7px 0px rgb(0 0 0 / 20%);
 		/* background-color: adjust-color($color: $iok-lightblue, $lightness: 10%); */
-		background-color: 
-		adjust-color($color: $iok-purple, $lightness: -10%);
-		color: $light;
+		background-color: color.adjust(theme.$iok-purple, $lightness: -10%);
+		color: theme.$light;
 		svg {
-			fill: $light;
+			fill: theme.$light;
 		}
 	}
 
@@ -49,11 +49,11 @@
 	}
 
 	&.secondary {
-		background-color: $light;
-		color: $grey;
+		background-color: theme.$light;
+		color: theme.$grey;
 		&:hover {
-			background-color: adjust-color($color: $light, $lightness: -1%);
-			color: adjust-color($color: $primary, $lightness: -10%)
+			background-color: color.adjust(theme.$light, $lightness: -1%);
+			color: color.adjust(theme.$primary, $lightness: -10%)
 		}
 	}
 }

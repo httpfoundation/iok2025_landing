@@ -1,6 +1,8 @@
-@import '../../theme.scss';
+@use '../../theme' as theme;
+
 #tamogatok {
-	background-color: $iok-sponsor-grey;
+	background-color: theme.$iok-sponsor-grey;
+	padding-bottom: 100px;
 	.sponsor-grid {
 		display: grid;
 /* 		grid-template-columns: repeat(4, 1fr);
@@ -14,7 +16,7 @@
 			img {
 				height: 100%;
 			}
-			@include mobile {
+			@include theme.mobile {
 				padding: 0 80px;
 			}
 		}
@@ -43,7 +45,7 @@
 					grid-column-end: 3;
 				}
 			}
-			@include mobile {
+			@include theme.mobile {
 				display: flex;
 				flex-direction: column;
 				column-gap: 20px;
@@ -102,15 +104,15 @@
 		line-height: 1.5;
 		text-align: center;
 		margin-bottom: 30px;
-		@include mobile {
+		@include theme.mobile {
 			font-size: 1.3rem;
 			margin-top: 30px;
 		}
 	}
 	h2 {
 		.highlight {
-			color: $bg-primary;
+			color: theme.$bg-primary;
 		}
 	}
-	padding-bottom: 100px;
+	
 }

@@ -1,4 +1,4 @@
-@import '../../theme.scss';
+@use '../../theme' as theme;
 
 h2.title {
 	font-weight: 700;
@@ -6,9 +6,9 @@ h2.title {
 	line-height: 1.5;
 	text-align: center;
 	.highlight {
-		color: $primary;
+		color: theme.$primary;
 	}
-	@include mobile {
+	@include theme.mobile {
 		font-size: 1.8rem;
 	}
 }
@@ -19,7 +19,7 @@ h3.subtitle {
 	line-height: 1.5;
 	margin-top: 50px;
 	margin-bottom: 20px;
-	@include mobile {
+	@include theme.mobile {
 		font-size: 1.3rem;
 		margin-top: 0;
 		text-align: center;

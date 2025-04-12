@@ -1,17 +1,17 @@
-@import '../theme.scss';
+@use '../theme' as theme;
 
 footer {
-	background-color: $dark-more;
+	background-color: theme.$dark-more;
 	padding: 40px 0;
 	.container {
 		display: flex;
-		@include mobile {
+		@include theme.mobile {
 			display: block;
 		}
 	}
 	.links {
 		flex: 1;
-		color: $lightgrey;
+		color: theme.$lightgrey;
 		font-weight: 500;
 		font-size: 0.8rem;
 
@@ -25,23 +25,25 @@ footer {
 			display: grid;
 			grid-template-columns: 16px auto;
 			gap: 5px;
-			@include mobile {
+			@include theme.mobile {
 				margin-bottom: 20px;
 			}
 		}
 
 		svg {
-			fill: $lightgrey;
+			fill: theme.$lightgrey;
 			transform: translateY(-2px);
 			width: 16px;
 		}
 		
 		a {
-			@include mobile {
-			}
 			text-decoration: none;
-			color: $lightgrey;
+			color: theme.$lightgrey;
 			margin-right: 20px;
+			
+			@include theme.mobile {
+				// Mobil specifikus stílusok
+			}
 			
 			&:hover {
 				text-decoration: underline;
@@ -49,7 +51,7 @@ footer {
 		}
 	}
 	.copyright {
-		color: $light;
+		color: theme.$light;
 		font-size: 0.8rem;
 	}
 	.http {
@@ -59,7 +61,7 @@ footer {
 	.copy {
 		margin-top: 10px;
 	}
-	@include mobile {
+	@include theme.mobile {
 		padding: 40px 20px;
 		.copyright {
 			margin-top: 20px;

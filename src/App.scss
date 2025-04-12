@@ -1,5 +1,9 @@
+@use 'sass:color';
+@use 'theme';
+@use 'variables';
+
 @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import './theme.scss';
+
 * {
 	font-family: 'Spartan', sans-serif;
 	z-index: 10;
@@ -11,26 +15,26 @@ body, html {
 }
 
 body {
-	background-color: $bg-primary;
+	background-color: theme.$bg-primary;
 }
 
 hr {
-	background-color: $primary;
+	background-color: theme.$primary;
 	height: 1px !important;
 	opacity: 1;
 }
 
 a.link {
-	color: lighten($primary, 15%);
+	color: color.adjust(theme.$primary, $lightness: 15%);
 	transition: 0.1s ease-out;
 	text-decoration: none;
 	&:hover {
-		color: $primary;
+		color: theme.$primary;
 		text-decoration: underline;
 	}
 }
 
 h2 {
-	color: $dark;
+	color: theme.$dark;
 	text-transform: uppercase;
 }

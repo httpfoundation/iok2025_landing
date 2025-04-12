@@ -1,0 +1,19 @@
+{
+  "extends": ["react-app"],
+
+  "overrides": [
+    {
+      "files": ["**/*.ts?(x)"],
+      "rules": {
+        "semi": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": ["@mui/*/*", "!@mui/material/styles", "!@mui/material/colors"]
+          }
+        ]
+      }
+    }
+  ]
+}

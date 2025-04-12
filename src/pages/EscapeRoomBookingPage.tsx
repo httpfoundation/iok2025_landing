@@ -1,18 +1,18 @@
-import { useEscapeRoomBookings } from "../hooks/useEscapeRoomBookings";
-import { Alert, Container, Grid, LinearProgress, Stack, Typography } from "@mui/material";
-import React, { useState } from "react";
-import { BookingSlotList } from "../components/BookingSlotList";
-import { useMe } from "../hooks/useMe";
-import { useRegId } from "../hooks/useRegId";
-import { LoadingSkeleton } from "../components/LoadingSkeleton";
-import { useBookingMutation } from "../hooks/useBookingMutation";
-import { BookingInfo } from "../components/BookingInfo";
+import { useEscapeRoomBookings } from '../hooks/useEscapeRoomBookings';
+import { Alert, Container, Grid, LinearProgress, Stack, Typography } from '@mui/material';
+import React, { useState } from 'react';
+import { BookingSlotList } from '../components/BookingSlotList';
+import { useMe } from '../hooks/useMe';
+import { useRegId } from '../hooks/useRegId';
+import { LoadingSkeleton } from '../components/LoadingSkeleton';
+import { useBookingMutation } from '../hooks/useBookingMutation';
+import { BookingInfo } from '../components/BookingInfo';
 
 export const EscapeRoomBookingPage = () => {
   const { data: bookings, status, error } = useEscapeRoomBookings();
   const regId = useRegId();
   const registration = useMe(regId);
-  const updateBooking = useBookingMutation(registration?.dato_token ?? "");
+  const updateBooking = useBookingMutation(registration?.dato_token ?? '');
   const [loading, setLoading] = useState(false);
 
   if (!regId) {
@@ -28,7 +28,7 @@ export const EscapeRoomBookingPage = () => {
     if (existing) {
       await updateBooking(
         existing.id,
-        existing.members.map((m) => (m?.id.toString() === userId ? null : m?.id))
+        existing.members.map((m) => (m?.id.toString() === userId ? null : m?.id)),
       );
     }
     // Check if the user wants to cancel the reservation (clicked on his own slot)
@@ -47,7 +47,7 @@ export const EscapeRoomBookingPage = () => {
       booking?.members.map((member, slot) => {
         if (member && member.id.toString() !== userId) return member.id;
         return slot === slotIndex ? userId : null;
-      }) ?? []
+      }) ?? [],
     );
     setLoading(false);
   }
@@ -74,8 +74,8 @@ export const EscapeRoomBookingPage = () => {
               B csapat
             </Grid>
           </Grid>
-          <LinearProgress sx={{ visibility: loading ? "visible" : "hidden" }} />
-          {status === "connecting" && <LoadingSkeleton />}
+          <LinearProgress sx={{ visibility: loading ? 'visible' : 'hidden' }} />
+          {status === 'connecting' && <LoadingSkeleton />}
           {error && (
             <Alert variant="filled" color="error">
               Hiba történt. Próbáld újratölteni az oldalt.
@@ -85,13 +85,13 @@ export const EscapeRoomBookingPage = () => {
             <Grid spacing={2} alignItems="center" container key={booking.id}>
               <Grid item xs={3} textAlign="left">
                 {new Date(booking.startingTime).toLocaleTimeString(undefined, {
-                  hour: "2-digit",
-                  minute: "2-digit",
+                  hour: '2-digit',
+                  minute: '2-digit',
                 })}
                 -
                 {new Date(new Date(booking.startingTime).setMinutes(45)).toLocaleTimeString(
                   undefined,
-                  { hour: "2-digit", minute: "2-digit" }
+                  { hour: '2-digit', minute: '2-digit' },
                 )}
               </Grid>
               <BookingSlotList

@@ -1,7 +1,7 @@
-@import '../../theme.scss';
+@use '../../theme' as theme;
 
 .text {
-	color: $grey;
+	color: theme.$grey;
 	font-size: 0.9rem;
 	line-height: 1.9;
 	&.subtitle{

@@ -1,17 +1,18 @@
-@import "../../theme.scss";
+@use '../../theme' as theme;
+
 #regisztracio {
   h2.title {
-    color: $light;
+    color: theme.$light;
     .highlight {
-      color: $primary;
+      color: theme.$primary;
     }
   }
   .text {
-    color: $light;
+    color: theme.$light;
   }
   h3 {
     text-align: center;
-    color: $light;
+    color: theme.$light;
   }
   p.subtitle {
     margin-bottom: 0;
@@ -26,17 +27,17 @@
   }
   .form-label,
   .form-check-label {
-    color: $light;
+    color: theme.$light;
     font-size: 0.9rem;
     font-weight: 600;
   }
   p {
-    color: $light;
+    color: theme.$light;
     font-size: 0.9rem;
   }
   .form-check-input:checked {
-    background-color: $bg-primary;
-    border-color: $bg-primary;
+    background-color: theme.$bg-primary;
+    border-color: theme.$bg-primary;
   }
   .form-check-input:focus {
     box-shadow: none;
@@ -46,8 +47,8 @@
   .form-control,
   .form-select {
     &:focus {
-      box-shadow: 0 0 0 0.1rem $primary;
-      border-color: $primary;
+      box-shadow: 0 0 0 0.1rem theme.$primary;
+      border-color: theme.$primary;
     }
   }
   input,
@@ -55,12 +56,12 @@
   select option {
     font-family: sans-serif;
     border-radius: 0;
-    accent-color: $primary;
+    accent-color: theme.$primary;
   }
   input[type="radio"] {
     accent-color: white;
     border: 1px solid white !important;
-    background-color: $dark;
+    background-color: theme.$dark;
   }
   .alert {
     font-size: 0.9rem;

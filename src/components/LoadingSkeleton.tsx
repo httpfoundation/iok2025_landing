@@ -1,5 +1,4 @@
-import { Skeleton, Stack } from "@mui/material";
-import React from "react";
+import { Skeleton, Stack } from '@mui/material';
 
 export const LoadingSkeleton = () => {
   const COUNT = 6;

@@ -1,15 +1,16 @@
-@import '../../theme.scss';
+@use '../../theme' as theme;
 
 #info-section {
+	padding-bottom: 50px;
 
 	.bubbles {
-		@include mobile {
-			display: none;
-		}
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: 1fr 1fr;
 		gap: 5px;
+		@include theme.mobile {
+			display: none;
+		}
 		.bubble{
 			&:nth-child(odd) {
 				justify-self: end;
@@ -19,9 +20,9 @@
 			}
 		}
 	}
-	padding-bottom: 50px;
+
 	.highlight {
-		color: $primary;
+		color: theme.$primary;
 	}
 
 	.squares {
@@ -30,7 +31,7 @@
 		grid-template-rows: 150px 150px;
 		transform: rotate(45deg) translateX(40%) translateY(40%);
 
-		@include mobile {
+		@include theme.mobile {
 			grid-template-columns: 120px 120px;
 			grid-template-rows: 120px 120px;
 
@@ -45,13 +46,13 @@
 		height: 100%;
 		background-color: #3b4658;
 		text-align: center;
-		color: $light;
+		color: theme.$light;
 		font-weight: 700;
 		
 
 		.square-icon {
 			svg {
-				fill: $light;
+				fill: theme.$light;
 				height: 50px;
 			}
 		}
@@ -59,7 +60,7 @@
 		.square-title {
 			font-size: 1rem;
 
-			@include mobile {
+			@include theme.mobile {
 				font-size: 0.8rem;
 			}
 		}
@@ -69,7 +70,7 @@
 		}
 
 		&.purple {
-			background-color: $primary;
+			background-color: theme.$primary;
 		}
 
 		&.large {

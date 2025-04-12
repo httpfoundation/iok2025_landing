@@ -1,7 +1,8 @@
-@import '../../theme.scss';
+@use 'sass:color';
+@use '../../theme' as theme;
 
 .bubble {
-	border: 2px solid $h1-color;
+	border: 2px solid theme.$h1-color;
 	width: 100%;
 	//height: 150px;
 	aspect-ratio: 1;
@@ -17,28 +18,28 @@
 		padding: 10px;
 		width: 150px;
 		.title {
-			color: $primary;
+			color: theme.$primary;
 			font-weight: bold;
 			font-size: 2.5rem;
 			svg {
-				fill: $lightgrey;
+				fill: theme.$lightgrey;
 			}
 		}
 		.subtitle {
-			color: $primary;
+			color: theme.$primary;
 		}
 	}
 
 	&.icon {
 		.subtitle {
-			color: $lightgrey;
+			color: theme.$lightgrey;
 			font-weight: 600;
 			font-size: 1.2rem;
 			padding-top: 20px;
 		}
 		&.primary {
 			.title svg {
-				fill: $light;
+				fill: theme.$light;
 			}
 		}
 	}
@@ -55,10 +56,10 @@
 
 	&.dark-text {
 		.title {
-			color: $dark;
+			color: theme.$dark;
 		}
 		.subtitle {
-			color: $grey;
+			color: theme.$grey;
 		}
 	}
 
@@ -79,14 +80,14 @@
 
 	&.light {
 		border: 0;
-		background-color: $light;
+		background-color: theme.$light;
 	}
 	&.primary {
 		border: 0;
-		background-color: $bg-primary;
-		box-shadow: 0px 16px 40px adjust-color($color: $bg-primary, $lightness: -20%);
+		background-color: theme.$bg-primary;
+		box-shadow: 0px 16px 40px color.adjust(theme.$bg-primary, $lightness: -20%);
 		.title, .subtitle {
-			color: $light;
+			color: theme.$light;
 		}
 	}
 
@@ -102,5 +103,4 @@
 	&.top-right {
 		border-top-right-radius: 0;
 	}
-
 }

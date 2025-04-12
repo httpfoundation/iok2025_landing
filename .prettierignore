@@ -1,6 +1,0 @@
-.next
-dist
-node_modules
-build
-pnpm-lock.yaml
-*.generated.ts

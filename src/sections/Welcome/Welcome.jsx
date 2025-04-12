@@ -1,27 +1,27 @@
-import { useEffect, useMemo, useState } from "react";
-import { StructuredText } from "react-datocms";
-import Fade from "react-reveal/Fade";
-import WelcomeImage from "../../assets/img/welcome-img-2025-veszprem.png";
-import WelcomeImageMobile from "../../assets/img/welcome-img-2025-veszprem-small.png";
-import Bubble from "../../components/Bubble/Bubble";
-import Button from "../../components/Button/Button";
-import Section from "../../components/Section/Section";
-import Calendar from "../../icons/Calendar";
-import Location from "../../icons/Location";
-import Ticket from "../../icons/Ticket";
-import { useStaticElement } from "../../tools/datoCmsTools";
-import "./Welcome.scss";
+import { useEffect, useMemo, useState } from 'react';
+import { StructuredText } from 'react-datocms';
+import { motion } from 'framer-motion';
+import WelcomeImage from '../../assets/img/welcome-img-2025-veszprem.png';
+import WelcomeImageMobile from '../../assets/img/welcome-img-2025-veszprem-small.png';
+import Bubble from '../../components/Bubble/Bubble';
+import Button from '../../components/Button/Button';
+import Section from '../../components/Section/Section';
+import Calendar from '../../icons/Calendar';
+import Location from '../../icons/Location';
+import Ticket from '../../icons/Ticket';
+import { useStaticElement } from '../../tools/datoCmsTools';
+import './Welcome.scss';
 
 const Overview = (props) => {
   return (
     <div className="overview">
       <OverviewItem>
         <Calendar />
-        {props.date.toLocaleDateString("hu-HU", {
-          day: "numeric",
-          month: "long",
-          year: "numeric",
-          weekday: "long",
+        {props.date.toLocaleDateString('hu-HU', {
+          day: 'numeric',
+          month: 'long',
+          year: 'numeric',
+          weekday: 'long',
         })}
       </OverviewItem>
       <OverviewItem>
@@ -44,9 +44,9 @@ const calculateCountdown = (target) => {
 };
 
 const Welcome = () => {
-  const target = useMemo(() => new Date("2025-03-29T09:30:00"), []);
+  const target = useMemo(() => new Date('2025-03-29T09:30:00'), []);
   const [countdown, setCountdown] = useState({});
-  const [welcomeText] = useStaticElement("welcome");
+  const [welcomeText] = useStaticElement('welcome');
   useEffect(() => {
     setCountdown(calculateCountdown(target));
     const interval = window.setInterval(() => {
@@ -61,15 +61,27 @@ const Welcome = () => {
       <div className="row">
         <div className="col-md-6 col-12">
           {/* <div className="bubbles">
-            <Fade left delay={200}>
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1.5, delay: 0.2 }}
+            >
               <Bubble title={countdown.days} subtitle="nap" corners={["bottom-left"]} />
-            </Fade>
-            <Fade left delay={100}>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
               <Bubble title={countdown.hours} subtitle="óra" />
-            </Fade>
-            <Fade left delay={0}>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+            >
               <Bubble title={countdown.minutes} subtitle="perc" corners={["top-left"]} />
-            </Fade>
+            </motion.div>
           </div> */}
           <div className="countdown">
             <div className="triangle"></div>
@@ -88,47 +100,75 @@ const Welcome = () => {
               <div className="unit">perc</div>
             </div>
           </div>
-          <Fade top delay={300}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
             <Overview date={target} />
-          </Fade>
-          <Fade right delay={350}>
-            <img
-              src={WelcomeImageMobile}
-              alt="IOK 2025"
-              className="welcome-image-mobile"
-            />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.35 }}
+          >
+            <img src={WelcomeImageMobile} alt="IOK 2025" className="welcome-image-mobile" />
             <div className="welcome-image-mobile-spacer"></div>
-          </Fade>
-          <Fade top delay={400}>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
             <h1>
               Informatikai Oktatási Konferencia <span className="highlight">2025</span>
             </h1>
-          </Fade>
-          <Fade top delay={440}>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.44 }}
+          >
             <StructuredText data={welcomeText} />
-          </Fade>
+          </motion.div>
           <div className="buttons">
-            {/*<Fade top delay={480}>
-                            <Button secondary bold>
-                                További információ
-                            </Button>
-                        </Fade> */}
-            <Fade top delay={530}>
+            {/*<motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.48 }}
+            >
+              <Button secondary bold>
+                További információ
+              </Button>
+            </motion.div> */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.53 }}
+            >
               <Button href="#regisztracio" bold>
                 <Ticket />
                 Regisztráció
               </Button>
-            </Fade>
+            </motion.div>
           </div>
         </div>
       </div>
-      <Fade right duration={1300}>
+      <motion.div
+        initial={{ opacity: 0, x: 200 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{
+          duration: 4,
+          ease: [0.25, 0.1, 0.25, 1],
+          opacity: { duration: 3.5, ease: [0.25, 0.1, 0.25, 1] },
+          x: { duration: 1, ease: [0.25, 0.1, 0.25, 1] },
+        }}
+      >
         <img src={WelcomeImage} alt="" className="welcome-image" />
         <img src={WelcomeImageMobile} alt="" className="welcome-image-small" />
-      </Fade>
+      </motion.div>
     </Section>
   );
 };
 
 export default Welcome;
-

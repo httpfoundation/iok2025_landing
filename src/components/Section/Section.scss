@@ -1,4 +1,4 @@
-@import '../../theme.scss';
+@use '../../theme' as theme;
 
 section.section {
 	&.section-placeholder {
@@ -6,13 +6,13 @@ section.section {
 		margin: auto;
 	}
 	&:nth-of-type(even) {
-		background-color: $iok-lightgrey;
+		background-color: theme.$iok-lightgrey;
 	}
 	&:nth-of-type(odd) {
-		background-color: $bg-secondary;
+		background-color: theme.$bg-secondary;
 	}
 	padding: 140px 0;
-	@include mobile {
+	@include theme.mobile {
 		padding: 70px 0;
 	}
 }

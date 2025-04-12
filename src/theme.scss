@@ -1,3 +1,6 @@
+@use 'sass:color';
+@forward './_variables.scss';
+
 $primary: #8e3ccc; //buttons
 $light: #fff;
 $dark: #1b1c31;
@@ -10,7 +13,7 @@ $bg-secondary: #1b1c31; // header háttér
 $iok-yellow: #fadd99;
 $h1-color: $iok-yellow;
 $iok-light: #bde7ff;
-$iok-lightblue: adjust-color($dark, $lightness: 25%);
+$iok-lightblue: color.adjust($dark, $lightness: 25%);
 $iok-lightgrey: #dddddd; // info section background
 $iok-lightgreen: #a7ede2;
 $iok-sponsor-grey: #e9ecef;

@@ -1,25 +1,25 @@
-import BrandImg from "../assets/img/http-iok-logo-2025.png";
-import "./Header.scss";
+import BrandImg from '../assets/img/http-iok-logo-2025.png';
+import './Header.scss';
 //import BrandImgSmall from '../assets/img/http-iok-logo-small.png'
-import useScrollPosition from "@react-hook/window-scroll";
-import { useState } from "react";
-import Fade from "react-reveal/Fade";
-import Button from "../components/Button/Button";
-import Ticket from "../icons/Ticket";
+import useScrollPosition from '@react-hook/window-scroll';
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import Button from '../components/Button/Button';
+import Ticket from '../icons/Ticket';
 
 const HamburgerMenu = (props) => {
   const items = [
-    { name: "Információk", href: "/#" },
-    { name: "Előadóink", href: "/#eloadok" },
-    { name: "Program", href: "/#program" },
-    { name: "Helyszín", href: "/#helyszin" },
-    { name: "Támogatók", href: "/#tamogatok" },
+    { name: 'Információk', href: '/#' },
+    { name: 'Előadóink', href: '/#eloadok' },
+    { name: 'Program', href: '/#program' },
+    { name: 'Helyszín', href: '/#helyszin' },
+    { name: 'Támogatók', href: '/#tamogatok' },
   ];
 
   return (
     <>
-      <div className={`backdrop ${props.open ? "open" : ""}`} onClick={props.onClose}></div>
-      <div className={`hamburger-menu ${props.open ? "open" : ""}`}>
+      <div className={`backdrop ${props.open ? 'open' : ''}`} onClick={props.onClose}></div>
+      <div className={`hamburger-menu ${props.open ? 'open' : ''}`}>
         <div className="hamburger-toggle close" onClick={props.onClose}>
           <div className="bar"></div>
           <div className="bar"></div>
@@ -48,27 +48,29 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className={`${scrollY < limit ? "transparent" : ""} header`}>
-      <div className="container">
-        <Fade top delay={900}>
-          {/* <img src={BrandImgSmall} alt="HTTP Alapítvány" className="brand-image brand-image-small" /> */}
-          <img src={BrandImg} alt="HTTP Alapítvány - IOK 2025" className="brand-image" />
-          <h1></h1>
-          <Button href="#regisztracio" bold>
-            <Ticket />
-            Regisztráció
-          </Button>
-          <div className="hamburger-toggle" onClick={() => setMenuOpen(true)}>
-            <div className="bar"></div>
-            <div className="bar"></div>
-            <div className="bar"></div>
-          </div>
-        </Fade>
-      </div>
+    <header className={`${scrollY < limit ? 'transparent' : ''} header`}>
+      <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.9 }}
+        className="container"
+      >
+        {/* <img src={BrandImgSmall} alt="HTTP Alapítvány" className="brand-image brand-image-small" /> */}
+        <img src={BrandImg} alt="HTTP Alapítvány - IOK 2025" className="brand-image" />
+        <h1></h1>
+        <Button href="#regisztracio" bold>
+          <Ticket />
+          Regisztráció
+        </Button>
+        <div className="hamburger-toggle" onClick={() => setMenuOpen(true)}>
+          <div className="bar"></div>
+          <div className="bar"></div>
+          <div className="bar"></div>
+        </div>
+      </motion.div>
       <HamburgerMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
     </header>
   );
 };
 
 export default Header;
-

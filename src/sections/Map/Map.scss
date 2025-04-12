@@ -1,14 +1,14 @@
-@import '../../theme.scss';
+@use '../../theme' as theme;
 
 #helyszin {
 	h2.title {
-		color: $light;
+		color: theme.$light;
 		.highlight {
-			color: $primary;
+			color: theme.$primary;
 		}
 	}
 	.text {
-		color: $light;
+		color: theme.$light;
 	}
 	text-align: center;
 	padding: 80px 0;

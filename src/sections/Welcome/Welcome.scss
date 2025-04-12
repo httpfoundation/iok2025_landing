@@ -1,7 +1,6 @@
-@import '../../theme.scss';
+@use '../../theme' as theme;
 
 #welcome {
-	
 	padding: 90px 0 48px 0;
 	position: relative;
 	.welcome-image {
@@ -26,7 +25,7 @@
 		@media (max-width: 1200px) {
 			display: block;
 		}
-		@include mobile {
+		@include theme.mobile {
 			display: none;
 		}
 	}
@@ -37,14 +36,14 @@
 		right: 0;
 		z-index: -1;
 		margin-top: -42%;
-		@include mobile {
+		@include theme.mobile {
 			display: block;
 		}
 	}
 	.welcome-image-mobile-spacer {
 		height: 60vw;
 		display: none;
-		@include mobile {
+		@include theme.mobile {
 			display: block;
 		}
 	}
@@ -62,21 +61,21 @@
 
 		margin: 5rem 0;
 
-		@include mobile {
+		@include theme.mobile {
 			gap: 10px;
 			margin: 3rem 0;
 			justify-content: center;
 		}
 
 		.countdown-item {
-			color: $light;
+			color: theme.$light;
 			text-align: center;
 			.number {
 				font-size: 4rem;
 				font-weight: 700;
 				line-height: 100px;
 
-				@include mobile {
+				@include theme.mobile {
 					font-size: 2.5rem;
 					line-height: 60px;
 				}
@@ -85,7 +84,7 @@
 				font-size: 1.1rem;
 				font-weight: 600;
 
-				@include mobile {
+				@include theme.mobile {
 					font-size: 0.9rem;
 				}
 			}
@@ -97,8 +96,7 @@
 			width: 50px;
 			transform: translateY(-20px);
 
-
-			@include mobile {
+			@include theme.mobile {
 				height: 60px;
 				width: 30px;
 				transform: translateY(-10px);
@@ -112,18 +110,18 @@
 		font-weight: 700;
 		font-size: 2.7rem;
 		line-height: 1.5;
-		color: $light;
+		color: theme.$light;
 		text-transform: uppercase;
 		.highlight {
-			color: $iok-purple;
+			color: theme.$iok-purple;
 		}
-		@include mobile {
+		@include theme.mobile {
 			font-size: 2rem;
 			text-align: center;
 		}
 	}
 	p {
-		color: $light;
+		color: theme.$light;
 		font-size: 0.9rem;
 		line-height: 1.8;
 		margin: 10px 0 30px 0;
@@ -134,7 +132,7 @@
 			display: inline-block;
 		}
 	}
-	@include mobile {
+	@include theme.mobile {
 		padding: 90px 0 75px 0;
 		.title {
 			padding-top: 10px;
@@ -150,15 +148,15 @@
 		display: inline-block;
 		font-size: 0.85rem;
 		font-weight: 600;
-		color: $light;
+		color: theme.$light;
 		margin-right: 20px;
 		svg {
-			fill: $primary;
+			fill: theme.$primary;
 			height: 15px;
 			transform: translateY(-2.5px);
 			margin-right: 8px;
 		}
-		@include mobile {
+		@include theme.mobile {
 			display: block;
 			text-align: center;
 			margin: 10px 0;
